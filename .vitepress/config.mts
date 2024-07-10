@@ -1,10 +1,14 @@
 import { defineConfig } from "vitepress";
 
+import escookConfig from "@escook/vitepress-theme/config";
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  extends: escookConfig,
   title: "yinxing233的笔记本",
   description: "Record learning",
   outDir: "docs", //打包输出的目录
+  base: "/notes/", //部署到github pages的路径
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: "yinxing233的笔记本",
@@ -155,6 +159,11 @@ export default defineConfig({
     socialLinks: [{ icon: "github", link: "https://github.com/yinxing233" }],
     footer: {
       copyright: "Copyright © 2023-present yinxing233",
+    },
+  },
+  vite: {
+    ssr: {
+      noExternal: ["@excook/vitepress-theme", "vitepress"],
     },
   },
 });
