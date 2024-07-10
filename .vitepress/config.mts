@@ -4,6 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "yinxing233的笔记本",
   description: "Record learning",
+  outDir: "docs", //打包输出的目录
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: "yinxing233的笔记本",
