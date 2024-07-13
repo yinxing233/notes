@@ -116,7 +116,17 @@ export default defineConfig({
         },
         {
           text: "Monorepo",
-          items: [{ text: "Monorepo架构", link: "/architect/monorepo" }],
+          items: [
+            { text: "Monorepo介绍", link: "/architect/monorepo01" },
+            { text: "Monorepo实施", link: "/architect/monorepo02" },
+          ],
+        },
+        {
+          text: "包管理器",
+          items: [
+            { text: "npm", link: "/architect/npm" },
+            { text: "pnpm", link: "/architect/pnpm" },
+          ],
         },
       ],
       "/medicine/": [
