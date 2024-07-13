@@ -72,7 +72,18 @@ export default defineConfig({
         },
         {
           text: "Node",
-          items: [{ text: "Node基础", link: "/backend/node" }],
+          items: [
+            { text: "Node.js介绍", link: "/backend/node01" },
+            { text: "Node.js全局变量", link: "/backend/node02" },
+            { text: "CSR/SSR/SEO", link: "/backend/node03" },
+            { text: "Node.js Path模块", link: "/backend/node04" },
+            { text: "Node.js OS模块", link: "/backend/node05" },
+            { text: "Node.js Process", link: "/backend/node06" },
+            { text: "Node.js Child Process", link: "/backend/node07" },
+            { text: "ffmpeg", link: "/backend/node08" },
+            { text: "events事件触发器", link: "/backend/node09" },
+            { text: "util工具", link: "/backend/node10" },
+          ],
         },
         {
           text: "Express",
