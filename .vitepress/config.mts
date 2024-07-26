@@ -115,7 +115,15 @@ export default defineConfig({
         },
         {
           text: "计算机网络",
-          items: [{ text: "计算机网络", link: "/408/408-cn" }],
+          items: [
+            { text: "计算机网络", link: "/408/408-cn01" },
+            { text: "http请求类型", link: "/408/408-cn02" },
+            { text: "http / https", link: "/408/408-cn03" },
+            { text: "http 各版本介绍", link: "/408/408-cn04" },
+            { text: "TCP / UDP 协议", link: "/408/408-cn05" },
+            { text: "CDN", link: "/408/408-cn06" },
+            { text: "DNS", link: "/408/408-cn07" },
+          ],
         },
       ],
 
@@ -126,17 +134,21 @@ export default defineConfig({
           items: [{ text: "介绍", link: "/architect/" }],
         },
         {
-          text: "Monorepo",
-          items: [
-            { text: "Monorepo介绍", link: "/architect/monorepo01" },
-            { text: "Monorepo实施", link: "/architect/monorepo02" },
-          ],
-        },
-        {
           text: "包管理器",
           items: [
             { text: "npm", link: "/architect/npm" },
             { text: "pnpm", link: "/architect/pnpm" },
+          ],
+        },
+        {
+          text: "CI / CD",
+          items: [{ text: "CI / CD", link: "/architect/cicd" }],
+        },
+        {
+          text: "Monorepo",
+          items: [
+            { text: "Monorepo介绍", link: "/architect/monorepo01" },
+            { text: "Monorepo实施", link: "/architect/monorepo02" },
           ],
         },
       ],
