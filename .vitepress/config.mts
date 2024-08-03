@@ -56,6 +56,10 @@ export default defineConfig({
           ],
         },
         {
+          text: "React",
+          items: [{ text: "React基础", link: "/frontend/react01.md" }],
+        },
+        {
           text: "工程化",
           items: [
             { text: "Vite", link: "/frontend/vite.md" },
