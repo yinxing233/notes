@@ -176,6 +176,10 @@ export default defineConfig({
       ],
       "/other/": [
         {
+          text: "介绍",
+          items: [{ text: "介绍", link: "/other/" }],
+        },
+        {
           text: "押韵表",
           items: [{ text: "押韵表", link: "/other/yayun" }],
         },
