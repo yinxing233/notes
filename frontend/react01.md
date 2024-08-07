@@ -110,7 +110,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-
         {this.state.show && <p>Hello React</p>}
       </div>
     )
@@ -165,3 +164,148 @@ function App() {
   )
 }
 ```
+
+## React中的表单绑定
+
+受控组件和非受控组件的区别：
+
+- 受控组件：表单元素的值由React控制，即value属性由React设置，onChange事件由React处理。也就是表单的值可以由使用者手动去设置，进行了双向绑定。我们可以修改一个state数据影响到表单显示的值。
+
+- 非受控组件：表单元素的值由DOM控制，即value属性由DOM设置，onChange事件由DOM处理。也就是我们只做了监听，没有设置value。
+
+```javascript
+// 实现了输入框和勾选框的双向绑定
+import React, { useState } from 'react'
+
+function App() {
+  const [state, setState] = useState({
+    inputValue: '',
+    checkedArr: ['c1'],
+  })
+
+  const handleChecked = (e) => {
+    if (e.target.checked) {
+      setState((prevState) => ({
+        ...prevState,
+        checkedArr: [...prevState.checkedArr, e.target.value],
+      }))
+    } else {
+      setState((prevState) => ({
+        ...prevState,
+        checkedArr: prevState.checkedArr.filter(
+          (item) => item !== e.target.value,
+        ),
+      }))
+    }
+  }
+
+  return (
+    <div className="App">
+      <div>{state.inputValue}</div>
+      <input
+        value={state.inputValue}
+        onInput={(e) => {
+          setState((prevState) => ({
+            ...prevState,
+            inputValue: e.target.value,
+          }))
+        }}
+      />
+      <ul>
+        {state.checkedArr.map((value, index) => (
+          <li key={index}>{value}</li>
+        ))}
+      </ul>
+      <input
+        checked={state.checkedArr.indexOf('c1') !== -1}
+        type="checkbox"
+        value="c1"
+        name="choose"
+        onChange={handleChecked}
+      />
+      按钮1
+      <input
+        checked={state.checkedArr.indexOf('c2') !== -1}
+        type="checkbox"
+        value="c2"
+        name="choose"
+        onChange={handleChecked}
+      />
+      按钮2
+      <input
+        checked={state.checkedArr.indexOf('c3') !== -1}
+        type="checkbox"
+        value="c3"
+        name="choose"
+        onChange={handleChecked}
+      />
+      按钮3
+    </div>
+  )
+}
+
+export default App
+```
+
+## React中的props
+
+在React中，一切写在组件上的属性和子节点都是props。
+
+所以props是react很多功能的根本。父子传值，插槽全部都基于props。不像vue有事件监听，emit，专门的插槽这类东西。
+
+### props使用
+
+```javascript
+// 父组件
+import Son from './Son'
+
+function App() {
+  const state = {
+    name: '张三',
+    age: 20,
+  }
+
+  return (
+    <div className="App">
+      这里是父组件
+      <Son name={state.name} age={state.age}></Son>
+    </div>
+  )
+}
+
+export default App
+```
+
+```javascript
+// 子组件
+import React from 'react'
+
+function Son(props) {
+  return (
+    <div>
+      <div>这里是子组件</div>
+      姓名：{props.name}
+      年龄：{props.age}
+    </div>
+  )
+}
+
+export default Son
+```
+
+### props的类型验证和默认值
+
+```javascript
+Son.propTypes = {
+    //验证类型
+    mes: function(props){
+        //验证类型的函数。也可以用库来做。
+    }
+}
+
+Son.defaultProps = {
+    //设置默认值
+    message: 'default'
+}
+```
+### 

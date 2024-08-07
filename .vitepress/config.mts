@@ -20,6 +20,7 @@ export default defineConfig({
       { text: "408", link: "/408" },
       { text: "架构", link: "/architect" },
       { text: "医学", link: "/medicine" },
+      { text: "其他", link: "/other" },
     ],
     sidebar: {
       // 当用户在 `前端` 目录页面下将会展示这个侧边栏
@@ -171,6 +172,12 @@ export default defineConfig({
         {
           text: "新冠后遗症",
           items: [{ text: "新冠后遗症的治疗", link: "/medicine/sequelae" }],
+        },
+      ],
+      "/other/": [
+        {
+          text: "押韵表",
+          items: [{ text: "押韵表", link: "/other/yayun" }],
         },
       ],
     },
